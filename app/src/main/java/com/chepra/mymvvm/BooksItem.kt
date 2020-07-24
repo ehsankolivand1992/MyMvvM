@@ -16,6 +16,7 @@ data class BooksItem(
     val name: String,
     @SerializedName("rate")
     val rate: Int,
+
     @SerializedName("updated_at")
     val updatedAt: String
 )
