@@ -8,14 +8,14 @@ import retrofit2.http.GET
 interface BookApi {
 
     @GET("books")
-    suspend fun getBooks():Response<List<Book>>
+    suspend fun getBooks():Response<List<BooksItem>>
 
     companion object {
         operator fun invoke():BookApi
         {
           return  Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("www.chepra.com")
+                .baseUrl("http://chepra.com/mvvmbooks/public/api/book")
                 .build()
                 .create(BookApi::class.java)
         }
